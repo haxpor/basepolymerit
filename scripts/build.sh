@@ -16,7 +16,7 @@ html_out_file=$element.v.html
 js_out_file=$element.v.js
 js_out_file_browserified=$element.v.b.js
 
-BABEL=node_modules/babel/bin/babel.js
+BABEL=node_modules/babel-cli/bin/babel.js
 
 # Check if $outFolder exists or not, if not then create one
 if [ -d $outFolder ];

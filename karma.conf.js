@@ -6,7 +6,6 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
-
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['polymer', 'browserify', 'jasmine'],
@@ -14,13 +13,13 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
         { pattern: 'node_modules/**', included: false, served: true, watched: true },
-        './src/**/*.js',
         './test/**/*.js'
     ],
 
     polymer: {
+      platform: "node_modules/platform/platform.js",
       src: [
-        './node_modules/@polymer/polymer/polymer.html',
+        'node_modules/@polymer/polymer/polymer.html',
         './src/**/*.js',
         './src/**/*.html'
       ]
