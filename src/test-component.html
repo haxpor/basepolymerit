@@ -1,0 +1,63 @@
+<!-- Test component only, when you clone basepolymerit repository, you are free to use this code as -->
+<!-- a starting point of develop your own component. But you're free to remove it. -->
+
+<link rel="import" href="../node_modules/@polymer/polymer/polymer.html">
+
+<dom-module id="stock-ticker">
+<style>
+  :host {
+    display: block;
+  }
+  h1, h3 {
+    margin: 0;
+    font-weight: 400;
+  }
+  h1 {
+    margin-right: 12px;
+  }
+  header {
+    display: flex;
+    align-items: center;
+  }
+  footer {
+    margin-top: 10px;
+    margin-bottom: 24px;
+    font-size: 12px;
+  }
+  a {
+    text-decoration: none;
+    color: currentColor;
+  }
+</style>
+<template>
+  <template is="dom-repeat" items="[[tickers]]" as="t">
+    <header>
+      <h1><span>[[t.t]]</span> - <span>[[t.l]]</span></h1>
+      <h3 style$="[[_computeColor(t.c)]]">
+        <span>[[_computeArrow(t.c)]]<span>
+        <span>[[_computePoints(t.c)]]</span> (<span>[[_computePercent(t.cp)]]</span>%)
+      </h3>
+    </header>
+    <template is="dom-if" if="[[t.el]]">
+      <div>
+        <span>After-hours: <span>[[t.el]]</span></span>
+        <span style$="[[_computeColor(t.ec)]]">
+          <span>[[_computeArrow(t.ec)]]<span>
+          <span>[[_computePoints(t.ec)]]</span> (<span>[[_computePercent(t.ecp)]]</span>%)
+        </span>
+      </div>
+    </template>
+    <footer><span>[[t.e]]</span> - data provided by
+      <a href="[[_computeHref(t.t)]]" target="_blank">Google Finance</a>
+    </footer>
+  </template>
+</template>
+<script src="test-component.js"></script>
+<script>
+(function() {
+
+Polymer(StockTicker);
+
+})();
+</script>
+</dom-module>
