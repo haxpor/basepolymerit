@@ -14,6 +14,7 @@ outFolder="./dist/"
 
 html_out_file=$element.v.html
 js_out_file=$element.v.js
+js_out_file_browserified=$element.v.b.js
 
 BABEL=node_modules/babel/bin/babel.js
 
@@ -34,6 +35,15 @@ node_modules/vulcanize/bin/vulcanize $inFolder$element.html \
 # babel
 echo "converting from ES6 to ES2015..."
 $BABEL --compact false --presets=es2015 $outFolder$js_out_file -o $outFolder$js_out_file
+
+# browserify
+echo "browerify..."
+node_modules/browserify/bin/cmd.js $outFolder$js_out_file > $outFolder$js_out_file_browserified
+
+# clean up
+echo "clean up..."
+rm -rf ./dist/$js_out_file
+mv $outFolder$js_out_file_browserified $outFolder$js_out_file
 
 # done
 echo "build successfully"

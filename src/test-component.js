@@ -4,6 +4,8 @@
 
 'use strict';
 
+let Playbasis = require('playbasis.js');
+
 class StockTicker {
 
   beforeRegister() {
@@ -58,5 +60,19 @@ class StockTicker {
 
   _computePercent(percent) {
     return percent.slice(1);
+  }
+
+  testtest() {
+    Playbasis.builder
+     .setApiKey("2043203153")
+     .setApiSecret("144da4c8df85b94dcdf1f228ced27a32")
+     .build();
+
+    Playbasis.authApi.auth()
+      .then((result) => {
+        console.log(result);
+      }, (e) => {
+        console.log(e);
+      });
   }
 }

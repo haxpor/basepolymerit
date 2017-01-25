@@ -7,7 +7,8 @@
     "start": "npm run build && ./node_modules/http-server/bin/http-server -a localhost -p 3000 -c-1",
     "test": "./node_modules/karma/bin/karma start",
     "server": "./node_modules/http-server/bin/http-server -a localhost -p 3000 -c-1",
-    "build": "./scripts/build.sh"
+    "build": "npm run clean && ./scripts/build.sh",
+    "clean": "rm -rf ./dist/*"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,8 @@
   "devDependencies": {
     "babel": "^5.8.21",
     "babel-preset-es2015": "^6.16.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.0.0",
     "crisper": "^1.0.7",
     "http-server": "^0.9.0",
     "jasmine-core": "^2.5.2",
@@ -33,6 +36,7 @@
     "karma-jasmine": "^1.1.0",
     "karma-polymer": "^0.1.4",
     "karma-spec-reporter": "0.0.26",
+    "playbasis.js": "^1.3.10",
     "vulcanize": "^1.10.3"
   },
   "dependencies": {
