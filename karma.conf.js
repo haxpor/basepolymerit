@@ -21,7 +21,8 @@ module.exports = function(config) {
     polymer: {
       src: [
         './node_modules/@polymer/polymer/polymer.html',
-        // TODO: Add related .html and .js files for polymer here...
+        './src/**/*.js',
+        './src/**/*.html'
       ]
     },
 

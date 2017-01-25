@@ -32,5 +32,8 @@ node_modules/vulcanize/bin/vulcanize $inFolder$element.html \
     node_modules/crisper/bin/crisper -h $outFolder$html_out_file -j $outFolder$js_out_file
 
 # babel
-echo "converting from ES6..."
-$BABEL --compact false $outFolder$js_out_file -o $outFolder$js_out_file
+echo "converting from ES6 to ES2015..."
+$BABEL --compact false --presets=es2015 $outFolder$js_out_file -o $outFolder$js_out_file
+
+# done
+echo "build successfully"

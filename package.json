@@ -4,10 +4,10 @@
   "description": "Starting code with necessary tools to create Polymer-based component",
   "main": "index.js",
   "scripts": {
-    "start": "echo 'building...' && ./scripts/build.sh && echo 'build successfully' && ./node_modules/http-server/bin/http-server -a localhost -p 3000 -c-1",
+    "start": "npm run build && ./node_modules/http-server/bin/http-server -a localhost -p 3000 -c-1",
+    "test": "./node_modules/karma/bin/karma start",
     "server": "./node_modules/http-server/bin/http-server -a localhost -p 3000 -c-1",
-    "build": "./scripts/build.sh",
-    "test": "./node_modules/karma/bin/karma start"
+    "build": "./scripts/build.sh"
   },
   "repository": {
     "type": "git",
