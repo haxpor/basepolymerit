@@ -4,15 +4,16 @@ describe('stock-ticker-test', function() {
 	var to_check;
 	var id_name = 'my-stock-ticker';
 
-	beforeAll(function() {
+	beforeAll(function(done) {
 		stockticker = document.createElement('stock-ticker');
 		stockticker.setAttribute('symbols', '["GOOG", "GOOGL"]');
 		stockticker.setAttribute('id', id_name);
 		document.body.appendChild(stockticker);
 
 		// get element now and use it throughout test case
-		to_check = document.getElementById(id_name);
-	});
+		//to_check = document.getElementById(id_name);
+		to_check = document.querySelector('#' + id_name);
+  });
 
 	afterAll(function() {
 		let to_remove = document.getElementById(id_name);
@@ -28,6 +29,7 @@ describe('stock-ticker-test', function() {
 	});
 
 	it('should has existing functions as seen in code', function() {
+		console.log(to_check._computePoints(1));
 		expect(typeof(to_check._computePoints) === 'function').toBeTruthy();
 		expect(typeof(to_check._computeColor) === 'function').toBeTruthy();
 		expect(typeof(to_check._computeArrow) === 'function').toBeTruthy();

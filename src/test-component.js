@@ -4,6 +4,7 @@
 
 'use strict';
 
+// selected playbasis.js for testing purpose
 let Playbasis = require('playbasis.js');
 
 class StockTicker {
@@ -62,7 +63,11 @@ class StockTicker {
     return percent.slice(1);
   }
 
-  testtest() {
+  dummyStr(str) {
+    return "dummy:" + str;
+  }
+
+  buildAndAuthPlaybasis() {
     Playbasis.builder
      .setApiKey("2043203153")
      .setApiSecret("144da4c8df85b94dcdf1f228ced27a32")
@@ -76,3 +81,6 @@ class StockTicker {
       });
   }
 }
+
+// Register the element using Polymer's constructor.
+Polymer(StockTicker);
