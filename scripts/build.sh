@@ -32,18 +32,17 @@ node_modules/vulcanize/bin/vulcanize $inFolder$element.html \
     --inline-script --inline-css --strip-comments | \
     node_modules/crisper/bin/crisper -h $outFolder$html_out_file -j $outFolder$js_out_file
 
-# babel
-echo "converting from ES6 to ES2015..."
-$BABEL --compact false --presets=es2015 $outFolder$js_out_file -o $outFolder$js_out_file
-
 # browserify
 echo "browerify..."
 node_modules/browserify/bin/cmd.js $outFolder$js_out_file > $outFolder$js_out_file_browserified
 
+# babel
+echo "converting from ES6 to ES2015..."
+$BABEL --compact true --presets es2015 --minified --no-comments --no-babelrc $outFolder$js_out_file_browserified -o $outFolder$js_out_file
+
 # clean up
 echo "clean up..."
-rm -rf ./dist/$js_out_file
-mv $outFolder$js_out_file_browserified $outFolder$js_out_file
+rm -rf ./dist/$js_out_file_browserified
 
 # done
 echo "build successfully"
