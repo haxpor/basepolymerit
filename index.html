@@ -6,7 +6,7 @@
 <script src="node_modules/webcomponents.js/webcomponents-lite.min.js" async></script>
 
 <!-- Import your component here -->
-<link rel="import" href="dist/test-component.v.html" async>
+<link rel="import" href="dist/test-component.v.html">
 
 <style>
   html, body {
@@ -52,5 +52,17 @@
   </div>
 </main>
 
+<script>
+  window.addEventListener('WebComponentsReady', function(e) {
+  	console.log("WebComponents is ready");
+
+    var elem = document.querySelector("stock-ticker");
+
+    console.log(elem.dummyStr('test'));
+    console.log(elem._computePercent('0.07'));
+
+    // do something here as webcomponent is ready ...
+  });
+</script>
 </body>
 </html>

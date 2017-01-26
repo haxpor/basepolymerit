@@ -6,11 +6,9 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
-
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['polymer', 'jasmine'],
-
+    frameworks: ['polymer', 'browserify', 'jasmine'],
 
     // list of files / patterns to load in the browser
     files: [
@@ -19,8 +17,9 @@ module.exports = function(config) {
     ],
 
     polymer: {
+      platform: "node_modules/platform/platform.js",
       src: [
-        './node_modules/@polymer/polymer/polymer.html',
+        'node_modules/@polymer/polymer/polymer.html',
         './src/**/*.js',
         './src/**/*.html'
       ]
@@ -34,13 +33,14 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        './src/**/*.js': [ 'browserify' ]
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    // update: add karma-spec-reporter, so we can use 'spec' here
+    // update: added karma-spec-reporter, so we can use 'spec' here
     reporters: ['spec'],
 
 

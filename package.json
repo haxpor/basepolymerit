@@ -7,7 +7,8 @@
     "start": "npm run build && ./node_modules/http-server/bin/http-server -a localhost -p 3000 -c-1",
     "test": "./node_modules/karma/bin/karma start",
     "server": "./node_modules/http-server/bin/http-server -a localhost -p 3000 -c-1",
-    "build": "./scripts/build.sh"
+    "build": "npm run clean && ./scripts/build.sh",
+    "clean": "rm -rf ./dist/*"
   },
   "repository": {
     "type": "git",
@@ -23,17 +24,23 @@
   },
   "homepage": "https://github.com/haxpor/basepolymerit#readme",
   "devDependencies": {
-    "babel": "^5.8.21",
+    "babel-cli": "^6.22.2",
     "babel-preset-es2015": "^6.16.0",
+    "browserify": "^13.3.0",
     "crisper": "^1.0.7",
     "http-server": "^0.9.0",
     "jasmine-core": "^2.5.2",
     "karma": "^1.4.0",
+    "karma-browserify": "^5.1.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-jasmine": "^1.1.0",
-    "karma-polymer": "^0.1.4",
+    "karma-polymer": "^0.1.5",
     "karma-spec-reporter": "0.0.26",
-    "vulcanize": "^1.10.3"
+    "platform": "^1.3.3",
+    "playbasis.js": "^1.3.10",
+    "uglify-js": "git+ssh://git@github.com/mishoo/UglifyJS2.git#harmony",
+    "vulcanize": "^1.10.3",
+    "watchify": "^3.9.0"
   },
   "dependencies": {
     "@polymer/polymer": "^1.2.5-npm-test.2"

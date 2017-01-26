@@ -1,5 +1,13 @@
 # basepolymerit
-Starting code with necessary tools to create Polymer-based component
+Starting project with necessary tools to create Polymer-based component
+
+It has the following tools working together
+
+* `karma` + `jasmine` as the testing suite
+* `babel` as converter ES6 to ES2015 code
+* `http-server` as local http server when testing and reviewing the result
+* `browserify` as a tool to be able to use `require()` and include all those required in browser environment
+* `vulcanize` + `cripser` as a tool to manage HTML import dependency into a single file, and JS code separator from HTML file into a separate file with compliant ensurer. This is specifically use with Polymer-based component
 
 # How To
 Commands are centralize to NPM. You can do the following

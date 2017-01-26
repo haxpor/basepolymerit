@@ -11,8 +11,9 @@ describe('stock-ticker-test', function() {
 		document.body.appendChild(stockticker);
 
 		// get element now and use it throughout test case
-		to_check = document.getElementById(id_name);
-	});
+		//to_check = document.getElementById(id_name);
+		to_check = document.querySelector('#' + id_name);
+  });
 
 	afterAll(function() {
 		let to_remove = document.getElementById(id_name);
