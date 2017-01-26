@@ -38,7 +38,7 @@
     "karma-spec-reporter": "0.0.26",
     "platform": "^1.3.3",
     "playbasis.js": "^1.3.10",
-    "uglify-js": "^2.7.5",
+    "uglify-js": "git+ssh://git@github.com/mishoo/UglifyJS2.git#harmony",
     "vulcanize": "^1.10.3",
     "watchify": "^3.9.0"
   },
