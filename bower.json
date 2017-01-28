@@ -20,5 +20,6 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.7.1"
-  }
+  },
+  "devDependencies": {}
 }

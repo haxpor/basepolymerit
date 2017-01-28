@@ -12,15 +12,16 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+        { pattern: 'bower_components/**', included: false, served: true, watched: true },
         { pattern: 'node_modules/**', included: false, served: true, watched: true },
+        'bower_components/webcomponentsjs/webcomponents-lite.min.js',
+        './src/**/*.js',
         './test/**/*.js'
     ],
 
     polymer: {
-      platform: "node_modules/platform/platform.js",
       src: [
-        'node_modules/@polymer/polymer/polymer.html',
-        './src/**/*.js',
+        'bower_components/polymer/polymer.html',
         './src/**/*.html'
       ]
     },
