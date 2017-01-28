@@ -1,9 +1,10 @@
 # basepolymerit
-Starting project with necessary tools to create Polymer-based component
+Starting project with necessary tools to create Polymer-based component.  
+The component is implemented in ES6 code separated logic code from its template. Thus it has one `.js` file with `.html` file.
 
 It has the following tools working together
 
-* `karma` + `jasmine` as the testing suite (not functional yet, need fix)
+* `karma` + `jasmine` as the testing suite (via `karma-polymer`)
 * `babel-cli` based on Babel 6 as converter ES6 to ES2015 code
 * `uglify-js` as uglifier to mainly mangle function's parameters.
 * `http-server` as local http server when testing and reviewing the result
