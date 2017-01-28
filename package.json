@@ -42,7 +42,5 @@
     "vulcanize": "^1.10.3",
     "watchify": "^3.9.0"
   },
-  "dependencies": {
-    "@polymer/polymer": "^1.2.5-npm-test.2"
-  }
+  "dependencies": {}
 }
