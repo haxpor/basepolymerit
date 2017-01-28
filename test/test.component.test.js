@@ -4,15 +4,19 @@ describe('stock-ticker-test', function() {
 	var to_check;
 	var id_name = 'my-stock-ticker';
 
-	beforeAll(function() {
-		stockticker = document.createElement('stock-ticker');
-		stockticker.setAttribute('symbols', '["GOOG", "GOOGL"]');
-		stockticker.setAttribute('id', id_name);
-		document.body.appendChild(stockticker);
+	beforeAll(function(done) {
+		window.addEventListener('WebComponentsReady', function(e) {
+			stockticker = document.createElement('stock-ticker');
+			stockticker.setAttribute('symbols', '["GOOG", "GOOGL"]');
+			stockticker.setAttribute('id', id_name);
+			document.body.appendChild(stockticker);
 
-		// get element now and use it throughout test case
-		//to_check = document.getElementById(id_name);
-		to_check = document.querySelector('#' + id_name);
+			// get element now and use it throughout test case
+			//to_check = document.getElementById(id_name);
+			to_check = document.getElementById(id_name);
+
+			done();
+		});
   });
 
 	afterAll(function() {

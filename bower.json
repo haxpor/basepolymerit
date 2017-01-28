@@ -1,0 +1,25 @@
+{
+  "name": "basepolymerit",
+  "description": "Starting code with necessary tools to create Polymer-based component",
+  "main": "index.js",
+  "authors": [
+    "Wasin Thonkaew"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "polymer"
+  ],
+  "homepage": "https://github.com/haxpor/basepolymerit",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.7.1"
+  },
+  "devDependencies": {}
+}
