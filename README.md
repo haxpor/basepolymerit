@@ -25,6 +25,10 @@ Commands are centralize to NPM. You can do the following
 * `index.html` is the demoing page. It imports built component as seen inside `./dist` directory.
 * `./scripts/build.sh` contains build commands to build the project, you should `npm install` first before using it via `npm build` or `npm start`.
 
+# CLI
+
+Use [basepolymerit-cli](https://github.com/haxpor/basepolymerit-cli) to help creating a starting project.
+
 # LICENSE
 
 It's based on MIT license.  

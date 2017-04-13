@@ -36,6 +36,8 @@ class StockTicker {
     let url = `https://finance.google.com/finance/info?client=ig&q=${this.symbols}`;
     url = `${url}`;
 
+    console.log(this.symbols);
+
     fetch(url).then(resp => resp.text()).then(text => {
       // Remove // prefix from response and parse as JSON.
       let tickers = JSON.parse(text.slice(text.indexOf('[')));
