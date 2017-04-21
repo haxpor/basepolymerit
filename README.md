@@ -22,7 +22,7 @@ Commands are centralize to NPM. You can do the following
 
 # Tips
 
-* `index.html` is the demoing page. It imports built component as seen inside `./dist` directory.
+* `index.html` is the demo page. It imports built component as seen inside `./dist` directory.
 * `./scripts/build.sh` contains build commands to build the project, you should `npm install` first before using it via `npm build` or `npm start`.
 
 # CLI
